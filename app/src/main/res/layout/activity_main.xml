@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingStart="24dp"
+    tools:context="com.flywheelms.codechallengeone.MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarFadeDuration="600000000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/page_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="12dp"
+                android:textSize="18sp"
+                android:text="@string/page_info" />
+
+            <RelativeLayout
+                android:id="@+id/input_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/page_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@color/input_panel_color"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/input_panel_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/input_panel_title"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/number_list_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/input_panel_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/number_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789,"
+                        android:hint="@string/number_list"
+                        android:inputType="text"
+                        android:maxLines="5"
+                        tools:ignore="TextFields" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/target_number_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/number_list_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/target_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/target_number"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/initialize_with_test_data_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/target_number_layout"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/initialize_with_test_data" />
+
+                <Button
+                    android:id="@+id/clear_data_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/initialize_with_test_data_button"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/clear_data" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/results_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_panel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@color/output_panel_color"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/results_panel_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/results_panel_title"
+                    android:textAlignment="center"
+                    android:textStyle="bold|italic" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/possible_permutations_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/results_panel_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/possible_permutations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/possible_permutations" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/optimised_permutations_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/possible_permutations_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/optimised_permutations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/optimised_permutations" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/elapsed_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/optimised_permutations_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/elapsed_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/elapsed_time" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/successful_permutation_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/elapsed_time_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/successful_permutation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/successful_permutation" />
+                </android.support.design.widget.TextInputLayout>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+</RelativeLayout>

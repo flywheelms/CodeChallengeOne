@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Code Challenge - 1</string>
+    <string name="number_list">Number List</string>
+    <string name="target_number">Target Number</string>
+    <string name="possible_permutations">Possible Permutations</string>
+    <string name="optimised_permutations">Optimized Permutations</string>
+    <string name="generated_permutations">Generated Permutations</string>
+    <string name="successful_permutation">First Successful Permutation</string>
+    <string name="page_info"><![CDATA[
+        Find the first permutation of the <i>Number Set</i> that adds up to the <i>Target Number</i>.  Duplicate numbers
+        will be ignored.\nInput your own data, or <i>INITIALISE WITH TEST DATA</i>.
+        ]]></string>
+    <string name="elapsed_time">Elapsed Time (millis)</string>
+    <string name="input_panel_title">Input Panel</string>
+    <string name="results_panel_title">Results Panel</string>
+    <string name="initialize_with_test_data">INITIALISE WITH TEST DATA</string>
+    <string name="clear_data">CLEAR DATA</string>
+    <string name="no_solution_possible">No solution possible.</string>
+    <string name="target_smaller_than_smallest_number">Target number smaller that smallest number in list.</string>
+    <string name="target_larger_than_sum_of_number_list">Target number larger than sum of number list.</string>
+</resources>
